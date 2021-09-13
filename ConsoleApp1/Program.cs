@@ -23,9 +23,9 @@ namespace ConsoleApp1
                 Console.WriteLine(post.Votes);
                 post.UpVote();
                 post.UpVote();
-                //post.DownVote();
-                //post.DownVote();
-                //post.DownVote();
+                post.DownVote();
+                post.DownVote();
+                post.DownVote();
                 post.DownVote();
                 Console.WriteLine("Title: {0}\nDescription: {1}\nDate created: {2}",post.Title, post.Description, post.DateCreated);
                 
