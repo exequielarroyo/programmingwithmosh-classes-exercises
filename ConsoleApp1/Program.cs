@@ -10,28 +10,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var stopwatch = new Stopwatch();
-            var post = new StackOverflow("Hello","Nothing");
-            while (true)
-            {
-                //stopwatch.Start();
-                //Console.ReadLine();
-                //stopwatch.Stop();
-                //Console.WriteLine(stopwatch.GetResult);
-                //Console.ReadLine();
+            var myStack = new Stack();
+            myStack.Push(1);
+            Console.WriteLine($"List: {myStack.Peek()}");
+            myStack.Push("Hello world");
+            Console.WriteLine($"List: {myStack.Peek()}");
+            Console.WriteLine($"Remove: {myStack.Pop()}");
+            Console.WriteLine($"Remove: {myStack.Pop()}\nList: {myStack.Peek()}");
 
-                Console.WriteLine(post.Votes);
-                post.UpVote();
-                post.UpVote();
-                //post.DownVote();
-                //post.DownVote();
-                //post.DownVote();
-                post.DownVote();
-                Console.WriteLine("Title: {0}\nDescription: {1}\nDate created: {2}",post.Title, post.Description, post.DateCreated);
-                
-                Console.WriteLine(post.Votes);
-                Console.ReadLine();
-            }
+
+            Console.ReadLine();
         }
     }
 }

@@ -8,15 +8,23 @@ namespace ConsoleApp1
 {
     class StackOverflow
     {
-        public string Title { get; set; }
+        private string _title;
+        public string Title
+        {
+            get { return _title; }
+            private set
+            {
+                if (!String.IsNullOrEmpty(value))
+                    _title = value;
+            }
+        }
         public string Description { get; set; }
         public DateTime DateCreated { get; set; }
-
-        int votes = 0;
-        public int Votes { get { return votes; } }
+        public int Votes { get; private set; }
 
         public StackOverflow(string title, string description)
         {
+            Votes = 0;
             Title = title;
             Description = description;
             DateCreated = DateTime.Now;
@@ -24,13 +32,13 @@ namespace ConsoleApp1
 
         public void UpVote()
         {
-            if (votes >= 0)
-                votes++;
+            if (Votes >= 0)
+                Votes++;
         }
         public void DownVote()
         {
-            if (votes > 0)
-                votes--;
+            if (Votes > 0)
+                Votes--;
         }
     }
 }
