@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace ClassLibrary1.Interfaces
 {
     class EmailNotify : INotify
     {

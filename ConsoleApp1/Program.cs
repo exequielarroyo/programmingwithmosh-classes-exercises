@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -10,22 +11,20 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var workflow = new WorkflowEngine();
+            var process = new ClassLibrary1.Delegate.Delegate();
 
-            var notify = new Notify();
-            notify.Add(new EmailNotify());
-            notify.Add(new SmsNotify());
+            ClassLibrary1.Delegate.Delegate.MethodHandler methodHandler = new ClassLibrary1.Delegate.Delegate().Method1;
+            methodHandler += NewMethod1;
+            methodHandler += new ClassLibrary1.Delegate.Delegate().Method2;
 
-            workflow.Add(notify);
-            workflow.Add(new UploadCloud());
-            workflow.Add(new WebService());
-
-            var videoRecord = new VideoRecord();
-            workflow.Add(videoRecord);
-
-            workflow.Run();
+            process.Run(methodHandler);
 
             Console.ReadLine();
+        }
+
+        static void NewMethod1()
+        {
+            Console.WriteLine("NewMethod1 runs...");
         }
     }
 }

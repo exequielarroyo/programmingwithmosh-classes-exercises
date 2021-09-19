@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleApp1
+namespace ClassLibrary1
 {
     public class Notify : IActivity
     {

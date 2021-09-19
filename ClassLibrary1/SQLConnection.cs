@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 
-namespace ConsoleApp1
+namespace ClassLibrary1
 {
-    class SQLConnection : DbConnection
+    public class SQLConnection : DbConnection
     {
         public SQLConnection(string connectionString) : base(connectionString)
         {
-            
+
         }
 
         public override void Open()

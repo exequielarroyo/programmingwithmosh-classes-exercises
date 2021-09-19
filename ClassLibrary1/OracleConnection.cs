@@ -1,8 +1,9 @@
-﻿using System;
+﻿
+using System;
 
-namespace ConsoleApp1
+namespace ClassLibrary1
 {
-    class OracleConnection : DbConnection
+    public class OracleConnection : DbConnection
     {
         public OracleConnection(string connectionString) : base(connectionString)
         {

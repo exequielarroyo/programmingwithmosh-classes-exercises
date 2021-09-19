@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace ClassLibrary1
 {
-    class SmsNotify : INotify
+    public class SmsNotify : INotify
     {
         public void Notify()
         {

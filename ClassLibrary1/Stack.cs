@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ClassLibrary1
 {
     class Stack
     {
-        private ArrayList _list;
+        private readonly ArrayList _list;
 
         public Stack()
         {
@@ -25,7 +25,7 @@ namespace ConsoleApp1
         public object Pop()
         {
             var last = Peek();
-            _list.RemoveAt(_list.Count - 1);
+            _list.Remove(last);
             return last;
         }
 
@@ -38,7 +38,7 @@ namespace ConsoleApp1
 
         public void Clear()
         {
-            _list = new ArrayList();
+            _list.Clear();
         }
     }
 }
