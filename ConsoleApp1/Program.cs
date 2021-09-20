@@ -18,9 +18,9 @@ namespace ConsoleApp1
 
             Action<int, int> sample2 = NewFunc2;
             sample2 += (a, b) => { Console.WriteLine(a + b + c); };
-            sample2(1,2);
+            sample2(1, 2);
 
-            ClassLibrary1.Generic.MyClass.Func<int, string> func = () => { Console.WriteLine("hello"); };
+            MyClass.Func<int, string> func = () => { Console.WriteLine("hello"); };
             func += NewFunc<int, string>;
             func();
 
@@ -38,6 +38,11 @@ namespace ConsoleApp1
             Console.WriteLine("hi");
         }
 
+        // generic and delegates
+        public class MyClass
+        {
+            public delegate void Func<T, U>();
+        }
     }
 }
 
