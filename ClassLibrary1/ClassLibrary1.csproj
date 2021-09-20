@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="DbConnection.cs" />
     <Compile Include="Delegate\Delegate.cs" />
+    <Compile Include="Events\Button.cs" />
+    <Compile Include="Events\Click.cs" />
+    <Compile Include="Events\DataArgs.cs" />
+    <Compile Include="Events\Mouse.cs" />
     <Compile Include="Generic\GenericList.cs" />
     <Compile Include="Interfaces\EmailNotify.cs" />
     <Compile Include="Interfaces\IActivity.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +12,25 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Func<int, int> sample = number => number * 2;
-            Console.WriteLine(sample(100));
+            //Func<int, int> sample = number => number * 2;
+            //Console.WriteLine(sample(100));
 
-            var c = sample(100);
+            //var c = sample(100);
 
-            Action<int, int> sample2 = NewFunc2;
-            sample2 += (a, b) => { Console.WriteLine(a + b + c); };
-            sample2(1, 2);
+            //Action<int, int> sample2 = NewFunc2;
+            //sample2 += (a, b) => { Console.WriteLine(a + b + c); };
+            //sample2(1, 2);
 
-            MyClass.Func<int, string> func = () => { Console.WriteLine("hello"); };
-            func += NewFunc<int, string>;
-            func();
+            //MyClass.Func<int, string> func = () => { Console.WriteLine("hello"); };
+            //func += NewFunc<int, string>;
+            //func();
+
+            var click = new Click();
+            var button = new Button();
+            var mouse = new Mouse();
+            click.ClickedEvents += mouse.MouseClicked;
+            click.ClickedEvents += button.ButtonClicked;
+            click.Clicked("admin123");
 
 
             Console.ReadLine();
