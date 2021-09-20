@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\INotify.cs" />
     <Compile Include="Interfaces\IWorkflow.cs" />
     <Compile Include="Interfaces\Notify.cs" />
+    <Compile Include="Extentions\NotNested.cs" />
     <Compile Include="ObjectInitializers.cs" />
     <Compile Include="OracleConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
