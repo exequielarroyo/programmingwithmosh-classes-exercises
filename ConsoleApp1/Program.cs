@@ -11,20 +11,33 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var process = new ClassLibrary1.Delegate.Delegate();
+            Func<int, int> sample = number => number * 2;
+            Console.WriteLine(sample(100));
 
-            ClassLibrary1.Delegate.Delegate.MethodHandler methodHandler = new ClassLibrary1.Delegate.Delegate().Method1;
-            methodHandler += NewMethod1;
-            methodHandler += new ClassLibrary1.Delegate.Delegate().Method2;
+            var c = sample(100);
 
-            process.Run(methodHandler);
+            Action<int, int> sample2 = NewFunc2;
+            sample2 += (a, b) => { Console.WriteLine(a + b + c); };
+            sample2(1,2);
+
+            ClassLibrary1.Generic.MyClass.Func<int, string> func = () => { Console.WriteLine("hello"); };
+            func += NewFunc<int, string>;
+            func();
+
 
             Console.ReadLine();
         }
 
-        static void NewMethod1()
+        public static void NewFunc2(int a, int b)
         {
-            Console.WriteLine("NewMethod1 runs...");
+            Console.WriteLine(a + b);
         }
+
+        public static void NewFunc<T, a>()
+        {
+            Console.WriteLine("hi");
+        }
+
     }
 }
+

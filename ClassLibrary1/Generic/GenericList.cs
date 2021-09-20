@@ -50,4 +50,10 @@ namespace ClassLibrary1.Generic
             return 0;
         }
     }
+
+    // generic and delegates
+    public class MyClass
+    {
+        public delegate void Func<T, U>();
+    }
 }
