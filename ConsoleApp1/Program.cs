@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ClassLibrary1;
 using ClassLibrary1.LINQ;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -71,9 +72,9 @@ namespace ConsoleApp1
             //Console.WriteLine(average);
 
             //Nullable<DateTime> dateTime = new DateTime(2000, 11, 12);
-            DateTime? dateTime = new DateTime(2000, 11, 12);
-            Console.WriteLine(dateTime.HasValue);
-            Console.WriteLine(dateTime ?? DateTime.Now);
+            //DateTime? dateTime = new DateTime(2000, 11, 12);
+            //Console.WriteLine(dateTime.HasValue);
+            //Console.WriteLine(dateTime ?? DateTime.Now);
             //if (dateTime == null)
             //{
             //    dateTime = DateTime.Now;
@@ -83,8 +84,32 @@ namespace ConsoleApp1
             //{
             //    Console.WriteLine(dateTime.GetValueOrDefault());
             //}
-        }
 
+            //dynamic a = null;
+            //a = 5;
+            //Console.WriteLine(a);
+            //a.Hello();
+
+            var reader = new StreamReader("asd");
+            try
+            {
+                // uses the dispose method
+                using(var reader2 = new StreamReader("asd"))
+                {
+
+                }
+                throw new InvalidOperationException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+                reader.Dispose();
+            }
+        }
 
         public static void NewFunc2(int a, int b)
         {
@@ -96,10 +121,18 @@ namespace ConsoleApp1
             Console.WriteLine("hi");
         }
 
-        // generic delegates
-        public class MyClass
+        //// generic delegates
+        //public class MyClass
+        //{
+        //    public delegate void Func<T, U>();
+        //}
+    }
+
+    class MyClass : IDisposable
+    {
+        public void Dispose()
         {
-            public delegate void Func<T, U>();
+            Console.WriteLine("MyClass is disposed");
         }
     }
 }
