@@ -39,37 +39,50 @@ namespace ConsoleApp1
             //String a = "asd";
             //Console.WriteLine(a.Run());
 
-            var peripherals = new Peripherals().GetAllMouse();
-            //var cheaper = new List<ClassLibrary1.LINQ.Mouse>();
-            //foreach (var item in peripherals)
-            //{
-            //    if (item.Price < 500)
-            //        cheaper.Add(item);
-            //}
-            // LINQ Extention methods
-            var cheaper = peripherals
-                .Where(p => p.Price < 500)
-                .OrderBy(p => p.Brand)
-                .Select(p => p.Brand);
-            // LINQ Query Operator
-            var cheapMouse = from p in peripherals
-                             where p.Price < 500
-                             orderby p.Brand
-                             select p.Brand;
+            //var peripherals = new Peripherals().GetAllMouse();
+            ////var cheaper = new List<ClassLibrary1.LINQ.Mouse>();
+            ////foreach (var item in peripherals)
+            ////{
+            ////    if (item.Price < 500)
+            ////        cheaper.Add(item);
+            ////}
+            //// LINQ Extention methods
+            //var cheaper = peripherals
+            //    .Where(p => p.Price < 500)
+            //    .OrderBy(p => p.Brand)
+            //    .Select(p => p.Brand);
+            //// LINQ Query Operator
+            //var cheapMouse = from p in peripherals
+            //                 where p.Price < 500
+            //                 orderby p.Brand
+            //                 select p.Brand;
+            ////foreach (var item in cheaper)
+            ////{
+            ////    Console.WriteLine(item);
+            ////}
+            ////foreach (var item in cheapMouse)
+            ////{
+            ////    Console.WriteLine(item);
+            ////}
+            //var total = peripherals.Sum(p => p.Price);
+            //var printThis = peripherals.Where(p => p.Brand == "ASUS");
+            //Console.WriteLine(total);
+            //var average = peripherals.Average((p) => p.Price);
+            //Console.WriteLine(average);
 
-            //foreach (var item in cheaper)
+            //Nullable<DateTime> dateTime = new DateTime(2000, 11, 12);
+            DateTime? dateTime = new DateTime(2000, 11, 12);
+            Console.WriteLine(dateTime.HasValue);
+            Console.WriteLine(dateTime ?? DateTime.Now);
+            //if (dateTime == null)
             //{
-            //    Console.WriteLine(item);
+            //    dateTime = DateTime.Now;
+            //    Console.WriteLine(dateTime);
             //}
-            //foreach (var item in cheapMouse)
+            //else
             //{
-            //    Console.WriteLine(item);
+            //    Console.WriteLine(dateTime.GetValueOrDefault());
             //}
-            var total = peripherals.Sum(p => p.Price);
-            var printThis = peripherals.Where(p => p.Brand == "ASUS");
-            Console.WriteLine(total);
-            var average = peripherals.Average((p) => p.Price);
-            Console.WriteLine(average);
         }
 
 
