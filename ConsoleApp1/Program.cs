@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ClassLibrary1;
+using ClassLibrary1.LINQ;
 
 namespace ConsoleApp1
 {
@@ -31,15 +32,44 @@ namespace ConsoleApp1
             //click.ClickedEvents += button.ButtonClicked;
             //click.Clicked("admin123");
 
-            IEnumerable<int> sample = new List<int>();
-            sample.Max();
-            List<string> list = new List<string>();
-            IActivity activity = new WebService();
-            String a = "asd";
-            Console.WriteLine(a.Run());
+            //IEnumerable<int> sample = new List<int>() { 1,2,3,4};
+            //sample.Max();
+            //List<string> list = new List<string>();
+            //IActivity activity = new WebService();
+            //String a = "asd";
+            //Console.WriteLine(a.Run());
 
-            Console.ReadLine();
+            var peripherals = new Peripherals().GetAllMouse();
+            //var cheaper = new List<ClassLibrary1.LINQ.Mouse>();
+            //foreach (var item in peripherals)
+            //{
+            //    if (item.Price < 500)
+            //        cheaper.Add(item);
+            //}
+            // LINQ Extention methods
+            var cheaper = peripherals
+                .Where(p => p.Price < 500)
+                .OrderBy(p => p.Brand)
+                .Select(p => p.Brand);
+            // LINQ Query Operator
+            var cheapMouse = from p in peripherals
+                             where p.Price < 500
+                             orderby p.Brand
+                             select p.Brand;
 
+            //foreach (var item in cheaper)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //foreach (var item in cheapMouse)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            var total = peripherals.Sum(p => p.Price);
+            var printThis = peripherals.Where(p => p.Brand == "ASUS");
+            Console.WriteLine(total);
+            var average = peripherals.Average((p) => p.Price);
+            Console.WriteLine(average);
         }
 
 
