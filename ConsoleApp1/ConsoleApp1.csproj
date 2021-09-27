@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BankingClassLibrary\BankingClassLibrary.csproj">
+      <Project>{26514A1C-42D0-4C92-8A0B-3AA1968CAED6}</Project>
+      <Name>BankingClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
       <Project>{f41c505a-8373-4458-a19f-7b085c84efec}</Project>
       <Name>ClassLibrary1</Name>

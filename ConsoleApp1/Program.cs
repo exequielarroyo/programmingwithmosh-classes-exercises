@@ -1,14 +1,7 @@
-﻿using ClassLibrary1.Extentions;
-using ClassLibrary1.Events;
+﻿using BankingClassLibrary;
+using ClassLibrary1.Operator_Overloading;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using ClassLibrary1;
-using ClassLibrary1.LINQ;
-using System.IO;
+using System.Globalization;
 
 namespace ConsoleApp1
 {
@@ -90,26 +83,61 @@ namespace ConsoleApp1
             //Console.WriteLine(a);
             //a.Hello();
 
-            var reader = new StreamReader("asd");
-            try
-            {
-                // uses the dispose method
-                using(var reader2 = new StreamReader("asd"))
-                {
+            //var reader = new StreamReader("asd");
+            //try
+            //{
+            //    // uses the dispose method
+            //    using(var reader2 = new StreamReader("asd"))
+            //    {
 
-                }
-                throw new InvalidOperationException();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-            finally
-            {
-                reader.Dispose();
-            }
+            //    }
+            //    throw new InvalidOperationException();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    throw;
+            //}
+            //finally
+            //{
+            //    reader.Dispose();
+            //}
+
+            //var a = 1;
+            //decimal b = 2;
+            //Console.WriteLine(a / b);
+
+            //var myBank1 = new Bank("Kyla", 10000);
+            //var myBank = new Bank("Exequiel", 10000);
+            //Console.WriteLine($"{myBank.Number} {myBank.Balance} {myBank.Owner}");
+            //myBank.Withdraw(100, "Jollibee");
+            //myBank.Withdraw(499.59m, "McDo");
+            //myBank.Deposit(10000, "Adding");
+            //Console.WriteLine(myBank.GetTransactions());
+            //var ph = new CultureInfo("en-PH", false).NumberFormat;
+            //ph.CurrencySymbol = "₱"; // console can't render ₱
+            //var us = new CultureInfo("en-US");
+            //var japan = new CultureInfo("ja-JP");
+            //var britain = new CultureInfo("en-GB");
+            //var denmark = new CultureInfo("da-DK");
+            //Console.WriteLine($"{myBank.Number} {string.Format(us, "{0:c2}", myBank.Balance)} {myBank.Owner}");
+
+            var a = new Point(1, 1);
+            var b = new Point(1, 1);
+
+            var c = a + b;
+            Console.WriteLine($"{c.X} {c.Y}");
         }
+
+
+
+
+
+
+
+
+
+
 
         public static void NewFunc2(int a, int b)
         {
@@ -136,4 +164,5 @@ namespace ConsoleApp1
         }
     }
 }
+
 
