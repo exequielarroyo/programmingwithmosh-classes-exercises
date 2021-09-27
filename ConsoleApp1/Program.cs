@@ -122,11 +122,14 @@ namespace ConsoleApp1
             //var denmark = new CultureInfo("da-DK");
             //Console.WriteLine($"{myBank.Number} {string.Format(us, "{0:c2}", myBank.Balance)} {myBank.Owner}");
 
-            var a = new Point(1, 1);
+            var a = new Point(2, 2);
             var b = new Point(1, 1);
 
             var c = a + b;
+            var d = a < b;
             Console.WriteLine($"{c.X} {c.Y}");
+            Console.WriteLine($"a < b : {d}");
+            Console.WriteLine($"a > b : {a > b}");
         }
 
 

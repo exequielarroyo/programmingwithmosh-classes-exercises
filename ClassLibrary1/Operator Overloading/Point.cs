@@ -17,9 +17,27 @@ namespace ClassLibrary1.Operator_Overloading
             Y = y;
         }
 
-        public static Point operator+ (Point first, Point second)
+        public static Point operator + (Point first, Point second)
         {
             return new Point(first.X + second.X, first.Y + second.Y);
+        }
+
+        public static bool operator > (Point first, Point second)
+        {
+            if (first.X > second.X && first.Y > second.Y)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator < (Point first, Point second)
+        {
+            if (first.X < second.X && first.Y < second.Y)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
